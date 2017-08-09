@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "summary": "Create a polylinear scale",
-    "repository": "https://github.com/sporto/polylinear-scale",
+    "repository": "https://github.com/sporto/polylinear-scale.git",
     "license": "MIT",
     "source-directories": [
         "src"

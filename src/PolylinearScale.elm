@@ -7,6 +7,9 @@ module PolylinearScale exposing (DomainAndRange, polylinearScale)
 -}
 
 
+{-|
+    The domain and range
+-}
 type alias DomainAndRange =
     ( Float, Float )
 
