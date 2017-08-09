@@ -1,13 +1,11 @@
 module PolylinearScale exposing (DomainAndRange, polylinearScale)
 
-{-|
-
-@docs DomainAndRange, polylinearScale
-
+{-| @docs DomainAndRange, polylinearScale
 -}
 
 
 {-|
+
     The domain and range
 -}
 type alias DomainAndRange =
@@ -39,6 +37,7 @@ findNext items value =
 
 
 {-|
+
     Create a polylinear scale. Map from the domain to the range.
 
         scale = polylinearScale [(0, 0), (100, 50), (300, 100)]
@@ -78,12 +77,6 @@ polylinearScale list value =
 
                     result =
                         rangeCurrent + ratio * (value - domainCurrent)
-
-                    _ =
-                        Debug.log "rangeDiff" rangeDiff
-
-                    _ =
-                        Debug.log "domainDiff" domainDiff
                 in
                     Just result
 
