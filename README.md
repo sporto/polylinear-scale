@@ -1,6 +1,6 @@
-# Elm Polynear Scale
+# Elm Polylinear Scale
 
-Create polynear scales and map values.
+Create a polylinear scales and map values.
 
 As explained here <https://github.com/d3/d3-scale/blob/master/README.md#continuous_domain>
 
