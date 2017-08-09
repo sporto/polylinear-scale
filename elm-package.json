@@ -1,12 +1,14 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "summary": "Create a polylinear scale",
     "repository": "https://github.com/sporto/polylinear-scale.git",
     "license": "MIT",
     "source-directories": [
         "src"
     ],
-    "exposed-modules": ["PolylinearScale"],
+    "exposed-modules": [
+        "PolylinearScale"
+    ],
     "dependencies": {
         "elm-lang/core": "5.1.1 <= v < 6.0.0"
     },

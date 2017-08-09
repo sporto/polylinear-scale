@@ -1,6 +1,9 @@
 module PolylinearScale exposing (DomainAndRange, polylinearScale)
 
-{-| @docs DomainAndRange, polylinearScale
+{-| PolylinearScale
+
+@docs DomainAndRange, polylinearScale
+
 -}
 
 
