@@ -1,0 +1,10 @@
+{
+  "name": "polylinear-scale",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "test": "elm-test"
+  }
+}

@@ -1,0 +1,4 @@
+elm-stuff/
+yarn-error.log
+node_modules
+.DS_Store
