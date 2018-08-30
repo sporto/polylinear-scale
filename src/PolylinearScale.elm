@@ -10,6 +10,7 @@ module PolylinearScale exposing (DomainAndRange, polylinearScale)
 {-|
 
     The domain and range
+
 -}
 type alias DomainAndRange =
     ( Float, Float )
@@ -21,10 +22,11 @@ findCurrent items value =
         find item acc =
             if value >= Tuple.first item then
                 Just item
+
             else
                 acc
     in
-        List.foldl find Nothing items
+    List.foldl find Nothing items
 
 
 findNext : List DomainAndRange -> Float -> Maybe DomainAndRange
@@ -33,10 +35,11 @@ findNext items value =
         find item acc =
             if value - 0.01 < Tuple.first item then
                 Just item
+
             else
                 acc
     in
-        List.foldr find Nothing items
+    List.foldr find Nothing items
 
 
 {-|
@@ -47,6 +50,7 @@ findNext items value =
 
         scale 100 == 50
         scale 150 == 62.5
+
 -}
 polylinearScale : List DomainAndRange -> Float -> Maybe Float
 polylinearScale list value =
@@ -57,31 +61,32 @@ polylinearScale list value =
         maybeNext =
             findNext list value
     in
-        case ( maybeCurrent, maybeNext ) of
-            ( Just current, Just next ) ->
-                let
-                    ( domainCurrent, rangeCurrent ) =
-                        current
+    case ( maybeCurrent, maybeNext ) of
+        ( Just current, Just next ) ->
+            let
+                ( domainCurrent, rangeCurrent ) =
+                    current
 
-                    ( domainNext, rangeNext ) =
-                        next
+                ( domainNext, rangeNext ) =
+                    next
 
-                    rangeDiff =
-                        rangeNext - rangeCurrent
+                rangeDiff =
+                    rangeNext - rangeCurrent
 
-                    domainDiff =
-                        domainNext - domainCurrent
+                domainDiff =
+                    domainNext - domainCurrent
 
-                    ratio =
-                        if domainDiff == 0 then
-                            100
-                        else
-                            rangeDiff / domainDiff
+                ratio =
+                    if domainDiff == 0 then
+                        100
 
-                    result =
-                        rangeCurrent + ratio * (value - domainCurrent)
-                in
-                    Just result
+                    else
+                        rangeDiff / domainDiff
 
-            _ ->
-                Nothing
+                result =
+                    rangeCurrent + ratio * (value - domainCurrent)
+            in
+            Just result
+
+        _ ->
+            Nothing
